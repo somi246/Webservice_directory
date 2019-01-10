@@ -1,3 +1,5 @@
+<!--custom dashboard page modified based on sb-admin-->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,6 +45,7 @@
 
     </nav>
 
+<!--{wrapper}-->
     <div id="wrapper">
 
       <!-- Sidebar -->
@@ -52,28 +55,21 @@
 
         <div class="container-fluid">
 
-          <!-- Breadcrumbs-->
-          @include('inc.sb-admin.breadcrumb')
-
           <!-- Icon Cards-->
-          @include('inc.sb-admin.icon_cards')
+          @include('custom_inc.icon_cards')
 
-          <!-- Area Chart Example-->
-          @include('inc.sb-admin.area_chart')
-
-          <!-- DataTables Example -->
-          @include('inc.sb-admin.datatable')
         </div>
         <!-- /.container-fluid -->
 
         <!-- Sticky Footer -->
-        @include('inc.sb-admin.sticky_footer')
+        @include('custom_inc.sticky_footer')
 
       </div>
       <!-- /.content-wrapper -->
 
     </div>
-    <!-- /#wrapper -->
+<!--{/wrapper}-->
+
 
     <!-- Scroll to Top Button-->
     @include('inc.sb-admin.scroll_to_top_button')

@@ -1,3 +1,4 @@
+<!--Laravel template home page. Created after php artisan make:auth -->
 @extends('layouts.app')
 
 @section('content')

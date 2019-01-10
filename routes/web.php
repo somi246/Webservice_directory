@@ -22,6 +22,6 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/dashboard', function () {
-    return view('sb-admin.index');
+    return view('custom.dashboard');
 });
 
