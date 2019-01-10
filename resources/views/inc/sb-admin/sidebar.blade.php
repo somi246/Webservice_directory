@@ -15,10 +15,11 @@
         <a class="dropdown-item" href="login.html">Login</a>
         <a class="dropdown-item" href="register.html">Register</a>
         <a class="dropdown-item" href="forgot-password.html">Forgot Password</a>
+        <a class="dropdown-item" href="forgot-password.html">About</a>
         <div class="dropdown-divider"></div>
         <h6 class="dropdown-header">Other Pages:</h6>
         <a class="dropdown-item" href="404.html">404 Page</a>
-        <a class="dropdown-item" href="blank.html">Blank Page</a>
+        <a class="dropdown-item active" href="blank.html">Blank Page</a>
       </div>
     </li>
     <li class="nav-item">
@@ -31,4 +32,4 @@
         <i class="fas fa-fw fa-table"></i>
         <span>Tables</span></a>
     </li>
-</ul>
+  </ul>
