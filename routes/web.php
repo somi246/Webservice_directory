@@ -33,6 +33,10 @@ Route::get('/blank', function () {
     return view('sb-admin.blank');
 });
 
+Route::get('/contact', function () {
+    return view('sb-admin.contact');
+});
+
 /*
 Route::get('/dashboard', function () {
 return view('sb-admin.index');
