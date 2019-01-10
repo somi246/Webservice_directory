@@ -97,8 +97,8 @@
     <script src="js/sb-admin/sb-admin.min.js"></script>
 
     <!-- Demo scripts for this page-->
-    <script src="jssb-admin/demo/datatables-demo.js"></script>
-    <script src="jssb-admin/demo/chart-area-demo.js"></script>
+    <script src="js/sb-admin/demo/datatables-demo.js"></script>
+    <script src="js/sb-admin/demo/chart-area-demo.js"></script>
 
   </body>
 
