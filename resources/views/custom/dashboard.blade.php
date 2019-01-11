@@ -49,7 +49,7 @@
     <div id="wrapper">
 
       <!-- Sidebar -->
-      @include('inc.sb-admin.sidebar')
+      @include('custom_inc.sidebar')
 
       <div id="content-wrapper">
 
