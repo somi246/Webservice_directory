@@ -25,6 +25,9 @@ Route::get('/dashboard', function () {
     return view('custom.dashboard');
 });
 
+Route::resource('profiles', 'ProfilesTestController');
+
+
 Route::get('/about', function () {
     return view('sb-admin.about');
 });

@@ -7,13 +7,15 @@ use Illuminate\Http\Request;
 class ProfilesTestController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display the specified resource.
      *
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($username)
     {
-        //
+        $profile = ProfileTest::find($username);
+        return view('profiles.index')->with('profile', $profile);
     }
 
     /**
@@ -37,16 +39,6 @@ class ProfilesTestController extends Controller
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
