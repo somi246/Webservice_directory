@@ -25,7 +25,7 @@ Route::get('/dashboard', function () {
     return view('custom.dashboard');
 });
 
-Route::resource('profiles', 'ProfilesTestController');
+Route::resource('profile', 'ProfilesTestController');
 
 
 Route::get('/about', function () {

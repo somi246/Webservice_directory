@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class ProfileTest extends Model
 {
     // Table Name
-    protected $table = 'posts';
+    protected $table = 'profile_tests';
 
     //Primary Key
     public $primaryKey = 'id';

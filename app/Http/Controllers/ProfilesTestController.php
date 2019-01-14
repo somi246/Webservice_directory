@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\ProfileTest;
 
 class ProfilesTestController extends Controller
 {
@@ -12,10 +13,11 @@ class ProfilesTestController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function index($username)
+    public function index()
     {
-        $profile = ProfileTest::find($username);
-        return view('profiles.index')->with('profile', $profile);
+        $id = 1;
+        $profile = ProfileTest::find($id);
+        return view('custom.profiles.index')->with('profile', $profile);
     }
 
     /**
@@ -35,6 +37,17 @@ class ProfilesTestController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
+    {
+        //
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
     {
         //
     }
