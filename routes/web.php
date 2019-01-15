@@ -18,30 +18,11 @@ return view('signin');
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
-Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/dashboard', function () {
-    return view('custom.dashboard');
-});
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/dashboard', 'HomeController@index')->name('home');
+Route::get('/about', 'HomeController@about')->name('about');
+Route::get('/blank', 'HomeController@blank')->name('blank');
+Route::get('/contact', 'HomeController@contact')->name('contact');
 
 Route::resource('profile', 'ProfilesTestController');
-
-
-Route::get('/about', function () {
-    return view('sb-admin.about');
-});
-
-Route::get('/blank', function () {
-    return view('sb-admin.blank');
-});
-
-Route::get('/contact', function () {
-    return view('sb-admin.contact');
-});
-
-/*
-Route::get('/dashboard', function () {
-return view('sb-admin.index');
-});
- */

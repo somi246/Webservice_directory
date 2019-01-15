@@ -1,7 +1,7 @@
 <!--custom dashboard page modified based on sb-admin-->
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
   <head>
 
@@ -12,6 +12,16 @@
     <meta name="author" content="">
 
     @yield('title')
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <!-- Bootstrap core CSS-->
     <link href="css/sb-admin/bootstrap/bootstrap.min.css" rel="stylesheet">
@@ -37,6 +47,10 @@
         <i class="fas fa-bars"></i>
       </button>
 
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
       <!-- Navbar Search -->
       @include('inc.sb-admin.navbar_search')
 
@@ -56,7 +70,10 @@
         <div class="container-fluid">
 
           <!-- Custom Layout-->
-         @yield('content')
+          <main>
+            @yield('content')
+          </main>
+         
 
         </div>
         <!-- /.container-fluid -->
@@ -80,9 +97,12 @@
 
 
 
-    <!-- Bootstrap core JavaScript-->
+    <!-- Bootstrap core JavaScript -->
     <script src="js/jquery/jquery.min.js"></script>
+    <!-- Bootstrap core JavaScript 
     <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
+    -->
+    
 
     <!-- Core plugin JavaScript-->
     <script src="js/jquery-easing/jquery.easing.min.js"></script>

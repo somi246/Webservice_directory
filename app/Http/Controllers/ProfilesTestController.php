@@ -8,6 +8,16 @@ use App\ProfileTest;
 class ProfilesTestController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Display the specified resource.
      *
      * @param  int  $id
