@@ -1,7 +1,7 @@
  <!-- Breadcrumbs-->
  <ol class="breadcrumb">
     <li class="breadcrumb-item">
-      <a href="index.html">Dashboard</a>
+      <a href="/dashboard">Dashboard</a>
     </li>
     <li class="breadcrumb-item active">Contact</li>
   </ol>
