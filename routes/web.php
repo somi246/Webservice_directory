@@ -27,9 +27,8 @@ Route::get('/dashboard', function () {
 
 Route::resource('profile', 'ProfilesTestController');
 
-
 Route::get('/about', function () {
-    return view('sb-admin.about');
+    return view('custom.about');
 });
 
 Route::get('/blank', function () {
@@ -37,7 +36,7 @@ Route::get('/blank', function () {
 });
 
 Route::get('/contact', function () {
-    return view('sb-admin.contact');
+    return view('custom.contact');
 });
 
 /*

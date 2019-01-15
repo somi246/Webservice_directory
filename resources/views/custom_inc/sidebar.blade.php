@@ -14,13 +14,13 @@
     </li>
 
     <li class="nav-item">
-      <a class="nav-link" href="/charts">
+      <a class="nav-link" href="/edit">
         <i class="fas fa-edit"></i>
         <span>Edit</span></a>
     </li>
 
     <li class="nav-item">
-      <a class="nav-link" href="/tables">
+      <a class="nav-link" href="/contact">
         <i class="fas fa-fw fa-table"></i>
         <span>Contact</span></a>
     </li>
@@ -32,7 +32,7 @@
     </li>
 
     <li class="nav-item">
-      <a class="nav-link" href="/tables">
+      <a class="nav-link" href="/about">
         <i class="fas fa-question-circle"></i>
         <span>About</span></a>
     </li>
