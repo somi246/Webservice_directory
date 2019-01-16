@@ -26,12 +26,12 @@ class HomeController extends Controller
 
     public function about()
     {
-        return view('sb-admin.about');
+        return view('custom.about');
     }
 
     public function contact()
     {
-        return view('sb-admin.contact');
+        return view('custom.contact');
     }
 
 }

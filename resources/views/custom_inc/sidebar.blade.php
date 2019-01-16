@@ -14,7 +14,7 @@
     </li>
 
     <li class="nav-item">
-      <a class="nav-link" href="/edit">
+      <a class="nav-link" href="/profile/1/edit">
         <i class="fas fa-edit"></i>
         <span>Edit</span></a>
     </li>
@@ -26,14 +26,15 @@
     </li>
 
     <li class="nav-item">
+      <a class="nav-link" href="/about">
+        <i class="fas fa-question-circle"></i>
+        <span>About</span></a>
+    </li>
+
+    <li class="nav-item">
       <a class="nav-link" href="/tables">
         <i class="fas fa-wrench"></i>
         <span>App Updates</span></a>
     </li>
 
-    <li class="nav-item">
-      <a class="nav-link" href="/about">
-        <i class="fas fa-question-circle"></i>
-        <span>About</span></a>
-    </li>
   </ul>

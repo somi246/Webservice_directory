@@ -18,7 +18,6 @@ return view('signin');
 
 Auth::routes();
 
-
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/dashboard', 'HomeController@index')->name('home');
 Route::get('/about', 'HomeController@about')->name('about');
@@ -26,3 +25,5 @@ Route::get('/blank', 'HomeController@blank')->name('blank');
 Route::get('/contact', 'HomeController@contact')->name('contact');
 
 Route::resource('profile', 'ProfilesTestController');
+
+Route::get('/profile/edit', 'ProfilesTestController@edit');
