@@ -24,16 +24,16 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <!-- Bootstrap core CSS-->
-    <link href="css/sb-admin/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ URL::asset('css/sb-admin/bootstrap/bootstrap.min.css')}}" rel="stylesheet">
 
     <!-- Custom fonts for this template-->
-    <link href="css/sb-admin/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="{{ URL::asset('css/sb-admin/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
 
     <!-- Page level plugin CSS-->
-    <link href="css/sb-admin/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <link href="{{ URL::asset('css/sb-admin/datatables/dataTables.bootstrap4.css')}}" rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin/sb-admin.css" rel="stylesheet">
+    <link href="{{ URL::asset('css/sb-admin/sb-admin.css')}}" rel="stylesheet">
 
   </head>
 
@@ -41,7 +41,7 @@
 
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-      <a class="navbar-brand mr-1" href="index.html">Valdosta State University</a>
+      <a class="navbar-brand mr-1" href="/">Valdosta State University</a>
 
       <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
         <i class="fas fa-bars"></i>

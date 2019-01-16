@@ -14,7 +14,7 @@
     </li>
 
     <li class="nav-item">
-      <a class="nav-link" href="/edit">
+      <a class="nav-link" href="/profile/edit">
         <i class="fas fa-edit"></i>
         <span>Edit</span></a>
     </li>
