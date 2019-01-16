@@ -97,11 +97,7 @@
 
 
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="js/jquery/jquery.min.js"></script>
-    <!-- Bootstrap core JavaScript 
-    <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
-    -->
+
     
 
     <!-- Core plugin JavaScript-->

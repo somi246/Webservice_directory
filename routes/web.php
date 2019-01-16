@@ -24,6 +24,5 @@ Route::get('/about', 'HomeController@about')->name('about');
 Route::get('/blank', 'HomeController@blank')->name('blank');
 Route::get('/contact', 'HomeController@contact')->name('contact');
 
-Route::resource('profile', 'ProfilesTestController');
-
-Route::get('/profile/edit', 'ProfilesTestController@edit');
+Route::get('/edit', 'ProfilesTestController@edit');
+Route::resource('profile', 'ProfilesTestController')->except(['edit']);

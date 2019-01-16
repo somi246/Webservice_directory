@@ -46,11 +46,6 @@
             <label for="phone_type">Phone Type</label>
             <input id="phone_type" type="text" class="form-control" disabled="disabled" value="{{$profile->phone_type}}">
         </div>      
-        
-        <div class="form-group">
-                <label for="phone_type">Phone Type</label>
-                <input id="phone_type" type="text" class="form-control" disabled="disabled" value="{{$profile->phone_type}}">
-            </div>   
 
         <div class="form-group">
             <label for="office_location">Office Location</label>
