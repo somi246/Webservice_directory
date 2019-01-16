@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\ProfileTest;
 use Illuminate\Http\Request;
+use DB;
 
 class ProfilesTestController extends Controller
 {
@@ -25,8 +26,8 @@ class ProfilesTestController extends Controller
      */
     public function index()
     {
-        $id = 1;
-        $profile = ProfileTest::find($id);
+        $username = \Auth::user()->username;
+        $profile = DB::table('profile_tests')->where('username', $username)->first();
         return view('custom.profiles.index')->with('profile', $profile);
     }
 

@@ -55,7 +55,7 @@
       @include('inc.sb-admin.navbar_search')
 
       <!-- Navbar -->
-      @include('inc.sb-admin.navbar')
+      @include('custom_inc.navbar')
 
     </nav>
 
