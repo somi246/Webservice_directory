@@ -122,6 +122,7 @@ class ProfilesTestController extends Controller
         $profile->short_title = $request->input('short_title');
         $profile->department = $request->input('department');
         $profile->phone = $request->input('phone');
+        $profile->phone_type = $request->input('phone_type');
         $profile->office_location = $request->input('office_location');
         $profile->website = $request->input('website');
         $profile->skype_username = $request->input('skype_username');
