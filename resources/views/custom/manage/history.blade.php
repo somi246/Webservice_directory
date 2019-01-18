@@ -27,7 +27,7 @@
             <tr>
               <th>Name</th>
               
-              <th>Activity</th>
+              <th>Activities</th>
             </tr>
           </thead>
           <tbody>

@@ -34,7 +34,7 @@
             <tr>
               <td><a class="nav-link" href="">{{$profile->name}}</td>
               
-              <td><a class="nav-link" href="">01/22/20</td>
+              <td><a class="nav-link" href="">01/22/2022</td>
             </tr>
             <tr>
               <td>Mary</td>

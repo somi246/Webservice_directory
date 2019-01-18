@@ -27,10 +27,6 @@ Route::get('/contact', 'HomeController@contact')->name('contact');
 Route::get('/profile/edit', 'ProfilesTestController@edit');
 Route::resource('profile', 'ProfilesTestController')->except(['edit']);
 
-<<<<<<< HEAD
 Route::get('/manage/pending', 'ManageController@pending')->name('pending');
 Route::get('/manage/history', 'ManageController@history')->name('history');
 Route::get('/manage/allusers', 'ManageController@allUser')->name('allusers');
-=======
-Route::get('/manage', 'ManageController@index')->name('home');
->>>>>>> c90dd2d8253aa7fa6efb96055d5c7806d5c21037
