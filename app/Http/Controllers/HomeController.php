@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use DB;
 
 class HomeController extends Controller
 {
@@ -21,7 +22,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('custom.dashboard');
+        $username = \Auth::user()->username;
+        $manager = DB::table('directory_manager')->where('username', $username)->first();
+        if(is_null($manager)){
+            $isManager = false;
+        }
+        else{
+            $isManager = true;
+        }
+        return view('custom.dashboard')->with('isManager', $isManager);
     }
 
     public function about()

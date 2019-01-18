@@ -26,3 +26,5 @@ Route::get('/contact', 'HomeController@contact')->name('contact');
 
 Route::get('/profile/edit', 'ProfilesTestController@edit');
 Route::resource('profile', 'ProfilesTestController')->except(['edit']);
+
+Route::get('/manage', 'ManageController@index')->name('home');
