@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\ProfileTest;
+use App\DirectoryManager;
 use Illuminate\Http\Request;
 use DB;
 
@@ -28,6 +29,7 @@ class ProfilesTestController extends Controller
     {
         $username = \Auth::user()->username;
         $profile = DB::table('profile_tests')->where('username', $username)->first();
+
         return view('custom.profiles.index')->with('profile', $profile);
     }
 

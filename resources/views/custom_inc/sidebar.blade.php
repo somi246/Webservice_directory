@@ -19,6 +19,14 @@
         <span>Edit</span></a>
     </li>
 
+    @if($isManager)
+      <li class="nav-item">
+        <a class="nav-link" href="/manage">
+          <i class="fas fa-toolbox"></i>
+          <span>Manage</span></a>
+      </li>
+    @endif
+
     <li class="nav-item">
       <a class="nav-link" href="/contact">
         <i class="fas fa-fw fa-table"></i>
