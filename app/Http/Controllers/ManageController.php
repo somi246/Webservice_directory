@@ -2,33 +2,29 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\ProfileTest;
-use App\DirectoryManager;
 use DB;
-
 
 class ManageController extends Controller
 {
-
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    public function pending()
     {
-        $this->middleware('auth');
-    }
+        $username = \Auth::user()->username;
+        $profile = DB::table('profile_tests')->where('username', $username)->first();
 
+        return view('custom.manage.pending')->with('profile', $profile);
+    }
+    public function history()
+    {
+        $username = \Auth::user()->username;
+        $profile = DB::table('profile_tests')->where('username', $username)->first();
 
-    public function pending(){
-        return view('');
+        return view('custom.manage.history')->with('profile', $profile);
     }
-    public function history(){
-        return view('');
-    }
-    public function allUser(){
-        return view('');
+    public function allUser()
+    {
+        $username = \Auth::user()->username;
+        $profile = DB::table('profile_tests')->where('username', $username)->first();
+
+        return view('custom.manage.allusers')->with('profile', $profile);
     }
 }
