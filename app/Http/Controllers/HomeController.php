@@ -22,6 +22,21 @@ class HomeController extends Controller
      */
     public function index()
     {
+        return view('custom.dashboard')->with('isManager', $this->isManager());
+    }
+
+    public function about()
+    {
+        $isManager = $this->isManager();
+        return view('custom.about')->with('isManager', $this->isManager());
+    }
+
+    public function contact()
+    {
+        return view('custom.contact')->with('isManager', $this->isManager());
+    }
+
+    private function isManager(){
         $username = \Auth::user()->username;
         $manager = DB::table('directory_manager')->where('username', $username)->first();
         if(is_null($manager)){
@@ -30,17 +45,8 @@ class HomeController extends Controller
         else{
             $isManager = true;
         }
-        return view('custom.dashboard')->with('isManager', $isManager);
-    }
 
-    public function about()
-    {
-        return view('custom.about');
-    }
-
-    public function contact()
-    {
-        return view('custom.contact');
+        return $isManager;
     }
 
 }

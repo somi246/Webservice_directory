@@ -5,7 +5,6 @@
 @endsection  
 
 @section('content')
-
     @if(!empty($profile))
         <div class="form-group">
             <label for="name">Name</label>
