@@ -71,6 +71,7 @@
 
           <!-- Custom Layout-->
           <main>
+            @include('custom_inc.messages')
             @yield('content')
           </main>
          

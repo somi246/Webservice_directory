@@ -138,7 +138,7 @@ class ProfilesTestController extends Controller
         $profileTemp->degree_school = $request->input('degree_school');
         $profileTemp->img = $request->input('img');
         $profileTemp->save();
-        return redirect('/profile')->with('success', 'Submit Successful, waiting for your manager to approve');
+        return redirect('/profile')->with('success', 'Submit Successful! Waiting for your manager to approve');
     }
 
 

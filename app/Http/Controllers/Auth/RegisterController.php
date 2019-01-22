@@ -83,7 +83,7 @@ class RegisterController extends Controller
         $profileTemp->save();
 
         $profileRecord = new ProfileRecord;
-        $profileRecord->profile_id = $profileTemp->id;
+        $profileRecord->profile_id = $profileTest->id;
         $profileRecord->status = "initialized";
         $profileRecord->updated_by = "auto";
         $profileRecord->save();
