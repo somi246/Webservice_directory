@@ -29,7 +29,7 @@ class ProfilesTestController extends Controller
     {
         $username = \Auth::user()->username;
         $profile = DB::table('profile_tests')->where('username', $username)->first();
-        $isManager = $this->isManager();
+        $isManager = $this->isManager($username);
 
         return view('custom.profiles.index')->with(compact('profile', 'isManager'));
     }
@@ -76,7 +76,7 @@ class ProfilesTestController extends Controller
     {
         $username = \Auth::user()->username;
         $profile = DB::table('profile_tests')->where('username', $username)->first();
-        $isManager = $this->isManager();
+        $isManager = $this->isManager($username);
 
         return view('custom.profiles.edit')->with(compact('profile', 'isManager'));
     }
@@ -151,8 +151,7 @@ class ProfilesTestController extends Controller
         //
     }
 
-    private function isManager(){
-        $username = \Auth::user()->username;
+    private function isManager($username){
         $manager = DB::table('directory_manager')->where('username', $username)->first();
         if(is_null($manager)){
             $isManager = false;

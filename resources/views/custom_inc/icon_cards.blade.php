@@ -9,7 +9,7 @@
   <div class="col-xl-4 col-sm-4 mb-4 p-5"> @include("custom_inc.icon_cards.icon_card_about") </div>
 
   <div class="col-xl-4 col-sm-4 mb-4 p-5"> 
-      @if($isManager)
+      @if(!empty($isManager) && $isManager)
         @include("custom_inc.icon_cards.icon_card_manage")
       @endif
   </div>

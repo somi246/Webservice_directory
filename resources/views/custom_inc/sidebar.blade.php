@@ -19,7 +19,7 @@
         <span>Edit</span></a>
     </li>
 
-    @if($isManager)
+    @if(!empty($isManager) && $isManager)
       <li class="nav-item">
         <a class="nav-link" href="/manage">
           <i class="fas fa-toolbox"></i>

@@ -10,21 +10,50 @@ class ManageController extends Controller
     {
         $username = \Auth::user()->username;
         $profile = DB::table('profile_tests')->where('username', $username)->first();
-
-        return view('custom.manage.pending')->with('profile', $profile);
+        $isManager = $this->isManager($username);
+        if(!$isManager){
+            return redirect()->route('home');
+        }
+        else{
+            return view('custom.manage.pending')->with(compact('profile','isManager'));
+        }
     }
     public function history()
     {
         $username = \Auth::user()->username;
         $profile = DB::table('profile_tests')->where('username', $username)->first();
-
-        return view('custom.manage.history')->with('profile', $profile);
+        $isManager = $this->isManager($username);
+        if(!$isManager){
+            return redirect()->route('home');
+        }
+        else{
+            return view('custom.manage.history')->with(compact('profile','isManager'));
+        }
     }
     public function allUser()
     {
         $username = \Auth::user()->username;
         $profile = DB::table('profile_tests')->where('username', $username)->first();
+        $isManager = $this->isManager($username);
 
-        return view('custom.manage.allusers')->with('profile', $profile);
+        if(!$isManager){
+            return redirect()->route('home');
+        }
+        else{
+            return view('custom.manage.allusers')->with(compact('profile','isManager'));
+        }
+    }
+
+
+    private function isManager($username){
+        $manager = DB::table('directory_manager')->where('username', $username)->first();
+        if(is_null($manager)){
+            $isManager = false;
+        }
+        else{
+            $isManager = true;
+        }
+
+        return $isManager;
     }
 }
