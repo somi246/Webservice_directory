@@ -6,7 +6,7 @@
 
 @section('content')
     <h1>Edit Profile</h1>
-    {!! Form::open(['action' => ['ProfilesTestController@update',$profile->id], 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
+    {!! Form::open(['action' => ['ProfilesTestController@update',$profile_temp->id], 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
         <div class="form-group">
             {{Form::label('name', 'Name')}}
             {{Form::text('name', $profile->name, ['class' => 'form-control', 'readonly', 'placeholder' => 'name'])}}

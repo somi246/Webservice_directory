@@ -7,6 +7,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use App\ProfileTest;
+use App\ProfileTemp;
+use App\ProfileRecord;
 
 class RegisterController extends Controller
 {
@@ -63,6 +66,30 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $profileTest = new ProfileTest;
+        $profileTest->name = $data['name'];
+        $profileTest->username = $data['username'];
+        $profileTest->email = $data['email'];
+        $profileTest->title = $data['title'];
+        $profileTest->user_id = $data['user_id'];
+        $profileTest->save();
+
+        $profileTemp = new ProfileTemp;
+        $profileTemp->name = $data['name'];
+        $profileTemp->username = $data['username'];
+        $profileTemp->email = $data['email'];
+        $profileTemp->title = $data['title'];
+        $profileTemp->user_id = $data['user_id'];
+        $profileTemp->save();
+
+        $profileRecord = new ProfileRecord;
+        $profileRecord->profile_id = $profileTemp->id;
+        $profileRecord->status = "initialized";
+        $profileRecord->updated_by = "auto";
+        $profileRecord->save();
+
+
+
         return User::create([
             'username' => $data['username'],
             'email' => $data['email'],

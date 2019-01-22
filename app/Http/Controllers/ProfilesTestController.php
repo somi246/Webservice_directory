@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\ProfileTest;
+use App\ProfileTemp;
 use App\DirectoryManager;
 use Illuminate\Http\Request;
 use DB;
@@ -76,9 +77,10 @@ class ProfilesTestController extends Controller
     {
         $username = \Auth::user()->username;
         $profile = DB::table('profile_tests')->where('username', $username)->first();
+        $profile_temp = DB::table('profile_temp')->where('username', $username)->first();
         $isManager = $this->isManager($username);
 
-        return view('custom.profiles.edit')->with(compact('profile', 'isManager'));
+        return view('custom.profiles.edit')->with(compact('profile', 'profile_temp', 'isManager'));
     }
 
     
@@ -116,27 +118,27 @@ class ProfilesTestController extends Controller
         }
         */
 
-        // Update Profile
-        $profile = ProfileTest::find($id);
+        // Update ProfileTemp
+        $profileTemp = ProfileTemp::find($id);
 
-        $profile->name = $request->input('name');
-        $profile->email = $request->input('email');
-        $profile->username = $request->input('username');
-        $profile->title = $request->input('title');
-        $profile->short_title = $request->input('short_title');
-        $profile->department = $request->input('department');
-        $profile->phone = $request->input('phone');
-        $profile->phone_type = $request->input('phone_type');
-        $profile->office_location = $request->input('office_location');
-        $profile->website = $request->input('website');
-        $profile->skype_username = $request->input('skype_username');
-        $profile->office_hour = $request->input('office_hour');
-        $profile->bio = $request->input('bio');
-        $profile->degree_type = $request->input('degree_type');
-        $profile->degree_school = $request->input('degree_school');
-        $profile->img = $request->input('img');
-        $profile->save();
-        return redirect('/profile')->with('success', 'Post Updated');
+        $profileTemp->name = $request->input('name');
+        $profileTemp->email = $request->input('email');
+        $profileTemp->username = $request->input('username');
+        $profileTemp->title = $request->input('title');
+        $profileTemp->short_title = $request->input('short_title');
+        $profileTemp->department = $request->input('department');
+        $profileTemp->phone = $request->input('phone');
+        $profileTemp->phone_type = $request->input('phone_type');
+        $profileTemp->office_location = $request->input('office_location');
+        $profileTemp->website = $request->input('website');
+        $profileTemp->skype_username = $request->input('skype_username');
+        $profileTemp->office_hour = $request->input('office_hour');
+        $profileTemp->bio = $request->input('bio');
+        $profileTemp->degree_type = $request->input('degree_type');
+        $profileTemp->degree_school = $request->input('degree_school');
+        $profileTemp->img = $request->input('img');
+        $profileTemp->save();
+        return redirect('/profile')->with('success', 'Submit Successful, waiting for your manager to approve');
     }
 
 
@@ -151,7 +153,11 @@ class ProfilesTestController extends Controller
         //
     }
 
+    /**
+     * check the manager status
+     */
     private function isManager($username){
+
         $manager = DB::table('directory_manager')->where('username', $username)->first();
         if(is_null($manager)){
             $isManager = false;
