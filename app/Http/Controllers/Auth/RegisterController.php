@@ -80,6 +80,7 @@ class RegisterController extends Controller
         $profileTemp->email = $data['email'];
         $profileTemp->title = $data['title'];
         $profileTemp->user_id = $data['user_id'];
+        $profileTemp->profile_id = $profileTest->id;
         $profileTemp->save();
 
         $profileRecord = new ProfileRecord;

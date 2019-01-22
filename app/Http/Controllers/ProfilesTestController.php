@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\ProfileTest;
 use App\ProfileTemp;
+use App\ProfileRecord;
 use App\DirectoryManager;
 use Illuminate\Http\Request;
 use DB;
@@ -138,6 +139,14 @@ class ProfilesTestController extends Controller
         $profileTemp->degree_school = $request->input('degree_school');
         $profileTemp->img = $request->input('img');
         $profileTemp->save();
+
+        // update ProfileRecord
+        $profileRecord = DB::table('profile_record')->where('profile_id', $profileTemp->profile_id)->first();
+        $profileRecord = profileRecord::find($profileRecord->id);
+        $profileRecord->status = 'pending';
+        $profileRecord->updated_by = \Auth::user()->username;
+        $profileRecord->save();
+
         return redirect('/profile')->with('success', 'Submit Successful! Waiting for your manager to approve');
     }
 
