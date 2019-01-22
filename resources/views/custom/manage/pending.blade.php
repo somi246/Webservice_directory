@@ -5,17 +5,8 @@
 @endsection 
 
 @section('content')
-<ul class="nav nav-tabs" id="myTab" role="tablist">
-    <li class="nav-item">
-      <a class="nav-link active" id="pending-tab" data-toggle="tab" href="#" role="tab" aria-controls="pending" aria-selected="true">Pending</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" id="history-tab" data-toggle="tab" href="/manage/history" role="tab" aria-controls="history" aria-selected="false">History</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" id="allusers-tab" data-toggle="tab" href="/manage/allusers" role="tab" aria-controls="allusers" aria-selected="false">All Users</a>
-    </li>
-  </ul>
+
+  @include('custom_inc.navtab')
 
 <hr>
 
